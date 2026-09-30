@@ -15,7 +15,8 @@ build/
 *.sqlite
 *.sqlite3
 apps/ml/cache/
-apps/ml/models/*.pkl
+# NOTE: apps/ml/models/risk_model.pkl IS committed (420 KB) so the deployed
+# ML service loads the trained model instead of falling back to heuristics.
 
 # Env & secrets
 .env
