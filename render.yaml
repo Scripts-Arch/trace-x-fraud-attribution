@@ -15,6 +15,10 @@ services:
     startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
     plan: free
     envVars:
+      # requirements.txt pins (pydantic 2.7.4, numpy 1.26.4, sklearn 1.5.0)
+      # have no wheels for Render's default Python 3.14 — pin 3.11.
+      - key: PYTHON_VERSION
+        value: 3.11.9
       - key: TRACE_X_MODE
         value: hybrid   # live chain data with graceful simulated fallback
 

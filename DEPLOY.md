@@ -39,6 +39,7 @@ End result:
 3. **Environment variables** (Advanced → Add):
    | Key | Value |
    |---|---|
+   | `PYTHON_VERSION` | `3.11.9` (**required** — Render's default Python 3.14 cannot build the pinned pydantic/numpy/scikit-learn) |
    | `TRACE_X_MODE` | `hybrid` |
 4. **Create Web Service.** First build takes ~5 min (scikit-learn). When it's live, verify: open `https://trace-x-ml.onrender.com/health` → should show `"status": "ok"` with watcher info.
 
