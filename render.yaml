@@ -1,0 +1,37 @@
+# Render Blueprint — deploy BOTH backend services in one click:
+# Render dashboard → New + → Blueprint → pick this repo → Apply.
+# (Render reads this file and creates trace-x-ml + trace-x-api with the right settings.)
+#
+# IMPORTANT: the API service builds from the REPO ROOT (rootDir: .) so that npm
+# workspaces can resolve the @trace-x/shared package. Do not set rootDir to apps/api.
+
+services:
+  # ------------------------------------------------------------- ML service
+  - type: web
+    name: trace-x-ml
+    runtime: python
+    rootDir: apps/ml
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    plan: free
+    envVars:
+      - key: TRACE_X_MODE
+        value: hybrid   # live chain data with graceful simulated fallback
+
+  # ----------------------------------------------------------------- API
+  - type: web
+    name: trace-x-api
+    runtime: node
+    rootDir: .   # repo root — workspaces must resolve @trace-x/shared
+    buildCommand: npm install && npm run build -w @trace-x/shared && npm run build -w @trace-x/api
+    startCommand: node apps/api/dist/index.js
+    plan: free
+    envVars:
+      - key: ML_SERVICE_URL
+        value: https://trace-x-ml.onrender.com   # must match the ML service URL Render assigns
+      - key: JWT_SECRET
+        generateValue: true   # Render generates a random secret on first deploy
+      - key: CORS_ORIGIN
+        value: "*"   # TEMP: open during setup — replace with your Vercel URL afterwards
+      - key: TRACE_X_DB
+        value: /tmp/tracex.db   # free-tier disk is ephemeral; /tmp is writable

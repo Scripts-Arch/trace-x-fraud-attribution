@@ -1,0 +1,46 @@
+version: "3.9"
+
+# Trace-X — one-command local stack: docker compose up --build
+services:
+  ml:
+    build:
+      context: ./apps/ml
+    ports:
+      - "8000:8000"
+    environment:
+      - TRACE_X_MODE=hybrid
+      - TRACE_X_CACHE_DIR=/data/cache
+    volumes:
+      - ml-data:/data
+
+  api:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+    ports:
+      - "4000:4000"
+    environment:
+      - PORT=4000
+      - JWT_SECRET=change-me-in-production-tracex-secret
+      - ML_SERVICE_URL=http://ml:8000
+      - NCRP_MODE=sandbox
+      - SAHYOG_MODE=sandbox
+    depends_on:
+      - ml
+    volumes:
+      - api-data:/app/apps/api/data
+
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+      args:
+        - VITE_API_URL=/api/v1
+    ports:
+      - "5173:80"
+    depends_on:
+      - api
+
+volumes:
+  ml-data:
+  api-data:

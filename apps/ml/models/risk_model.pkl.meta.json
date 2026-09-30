@@ -1,0 +1,19 @@
+{
+ "version": "tx-risk-1.0.0",
+ "features": [
+  "fan_in",
+  "fan_out",
+  "tx_velocity",
+  "avg_usd",
+  "max_usd",
+  "mixer_proximity",
+  "bridge_usage",
+  "counterparty_risk",
+  "vasp_distance",
+  "graph_size_norm",
+  "fan_in_out_ratio",
+  "usd_log"
+ ],
+ "trainedOn": "trace-x-synthetic-fraud-corpus-600",
+ "mae": 1.84
+}

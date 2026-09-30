@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Builds
+dist/
+build/
+*.tsbuildinfo
+
+# Databases & caches
+*.db
+*.sqlite
+*.sqlite3
+apps/ml/cache/
+apps/ml/models/*.pkl
+
+# Env & secrets
+.env
+.env.local
+.env.*.local
+
+# Logs & OS
+logs/
+*.log
+.DS_Store
+Thumbs.db
+
+# Tool workspace metadata
+.freebuff/
+
+# Test artifacts
+.pytest_cache/
+.coverage
+htmlcov/

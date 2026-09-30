@@ -1,0 +1,12 @@
+{
+ "0x21a31ee1afc51d94c2efccaa2092ad1028285549": {
+  "address": "0x21a31ee1afc51d94c2efccaa2092ad1028285549",
+  "name": "OKX deposit wallet (verified in smoke test)",
+  "kind": "exchange",
+  "vaspId": "user-0x21a31ee1",
+  "jurisdiction": null,
+  "leaContact": null,
+  "addedBy": "investigator",
+  "addedAt": 1790693199919
+ }
+}

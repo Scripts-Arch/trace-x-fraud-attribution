@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root { height: 100%; }
+
+body {
+  @apply bg-ink-950 text-slate-200 antialiased;
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #1e2a45; border-radius: 8px; }
+
+@layer components {
+  .panel {
+    @apply rounded-xl border border-ink-700 bg-ink-900/70 shadow-panel;
+  }
+  .btn {
+    @apply inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold
+      transition-colors disabled:cursor-not-allowed disabled:opacity-40;
+  }
+  .btn-primary {
+    @apply btn bg-accent-dim text-white hover:bg-accent;
+  }
+  .btn-ghost {
+    @apply btn border border-ink-700 bg-ink-850 text-slate-300 hover:border-slate-500 hover:text-white;
+  }
+  .input {
+    @apply w-full rounded-lg border border-ink-700 bg-ink-850 px-3 py-2 text-sm
+      text-slate-100 placeholder-slate-500 outline-none focus:border-accent;
+  }
+  .th {
+    @apply px-3 py-2 text-left text-[11px] font-semibold uppercase tracking-wider text-slate-500;
+  }
+  .td {
+    @apply border-t border-ink-800 px-3 py-2 text-sm;
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "trace-x",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Trace-X — Real-Time Identification of Fraud-Linked Cryptocurrency Exchanges from Victim-Reported Suspect Wallet Addresses",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:web": "npm run dev -w apps/web",
+    "dev:api": "npm run dev -w apps/api",
+    "dev:ml": "python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --app-dir apps/ml",
+    "build": "npm run build -w packages/shared && npm run build -w apps/api && npm run build -w apps/web",
+    "test:api": "npm test -w apps/api",
+    "test:ml": "python -m pytest apps/ml -q",
+    "seed": "npm run seed -w apps/api"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "esbuild@0.21.5": true
+  }
+}

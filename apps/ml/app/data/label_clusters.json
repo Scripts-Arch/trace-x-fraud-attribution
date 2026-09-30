@@ -1,0 +1,44 @@
+{
+  "exchanges": {
+    "BTC": [
+      "1vVjbacNrzDRC1LPDNHQRaduJh4zzfb6b",
+      "1ufKUcE8gv6q4zvV9LBo9CDpPfxnfgGX1",
+      "3FupZp77ySr7jwoLYEJ9mwzJpvoNBXsBnE",
+      "3GAeQ3NSxLtPyhb2kwobGAqr6PNYNeyRJp",
+      "16bFSEpDs6NjwH2SUkVErA9Nf1D7Uzd7b6",
+      "1Ki25h11nwiBQFYF9Z6dD5oDwB3MDjjwrf",
+      "1M3Wc4sEnn2o2g5wE2fj4ZupeMnnPHcDy6",
+      "34NkYx2Y8MFKDvk1AGTEA3nnAyqC6Ca4Bs"
+    ],
+    "ETH": [
+      "0x28c6c06298d514db089934071355e5743bf21d60",
+      "0x21a31ee1afc51d94c2efccaa2092ad1028285549",
+      "0xdfd5293d8e347dfe59e90efd55b2956a1343963d",
+      "0x564286362092d8e7936f0549571a803b203aaced",
+      "0x9696f59e4d72e237be84ffd425dcad154bf96976"
+    ],
+    "TRON": [
+      "TV6MuMXfmLbBqPZvBHdwFsDnQeVfnmiuSi",
+      "TKHuVq1oKVruCGLvqVexFs6dawKv6fQgFs",
+      "TWd4WrZ9wn84f5x1hZhL4DHvk738ns5jwb",
+      "TAUN6FwrnwwmaEqYcckffC7wYmbaS6cBiX"
+    ]
+  },
+  "mixers": {
+    "BTC": [
+      "1MobAXv29v94YoYaueyKMhs6VM9Umz5DTB",
+      "1LA43qp5VTf8xaZT2opZBzafgKVqmvZzML"
+    ],
+    "ETH": [
+      "0x5f4e3c2d1b0a99887766554433221100ffeeddcc"
+    ]
+  },
+  "bridges": {
+    "ETH": [
+      "0xc0e4c3b4b7c9c9c9c9c9c9c9c9c9c9c9c9c9c9c9"
+    ],
+    "TRON": [
+      "TZ63heP5CbjxAZZtGS3bfxD9fxsjfJMY7x"
+    ]
+  }
+}
